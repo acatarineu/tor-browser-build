@@ -49,7 +49,6 @@ mkdir -p "$TBDIR/$MEEKPROFILEPATH/extensions"
 unzip -d $rootdir $rootdir/[% c('input_files_by_name/firefox') %]/mar-tools-*.zip
 MARTOOLS=$rootdir/mar-tools
 
-mv [% c('input_files_by_name/torbutton') %] "$TBDIR/$EXTSPATH/torbutton@torproject.org.xpi"
 mv [% c('input_files_by_name/https-everywhere') %] "$TBDIR/$EXTSPATH/https-everywhere-eff@eff.org.xpi"
 mv [% c('input_files_by_name/noscript') %] "$TBDIR/$EXTSPATH/{73a6fe31-595d-460b-a920-fcc0f8843232}.xpi"
 
@@ -170,9 +169,9 @@ fi
 
 pushd "$TBDIR[% IF c("var/osx") %]/Contents/Resources[% END %]/browser/"
 # For the proper search engines in our language packs
-unzip omni.ja chrome/en-US/locale/browser/searchplugins* || [ $? -lt 3 ]
-mv chrome/en-US/locale/browser/searchplugins $rootdir
-rm -rf chrome/en-US
+#unzip omni.ja chrome/en-US/locale/browser/searchplugins* || [ $? -lt 3 ]
+#mv chrome/en-US/locale/browser/searchplugins $rootdir
+#rm -rf chrome/en-US
 unzip omni.ja defaults/preferences/000-tor-browser.js || [ $? -lt 3 ]
 # Append our built extension-overrides.js to 000-tor-browser.js
 cat "$GENERATEDPREFSPATH" >> defaults/preferences/000-tor-browser.js
