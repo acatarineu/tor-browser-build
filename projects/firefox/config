@@ -1,7 +1,7 @@
 # vim: filetype=yaml sw=2
 version: '[% c("abbrev") %]'
 filename: 'firefox-[% c("version") %]-[% c("var/osname") %]-[% c("var/build_id") %]'
-git_hash: 'fde576575cf7964d0b31930353c77e7c8ee9c5b7'
+git_hash: 'b0f7d71f1aae351a914ac712e32589ad9c085fc0'
 tag_gpg_id: 0
 git_url: https://github.com/acatarineu/tor-browser.git
 git_submodule: 1
